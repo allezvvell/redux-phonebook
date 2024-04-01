@@ -17,9 +17,7 @@ body {
     text-align: center;
     letter-spacing: -2px;
 }
-.container .phonebook-wrap {
-    
-}
+
 .phonebook-wrap .form-wrap {
     margin-bottom: 30px;
 }
@@ -51,7 +49,20 @@ body {
 .form-wrap form .button-box {
     text-align: right;
 }
-.form-wrap form button {
+.button-box span {
+    margin-right: 10px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    color: #900;
+}
+.button-box span.true {
+    visibility: visible;
+    opacity: 1;
+}
+.button-box button {
     display: inline-block;
     padding: 10px 20px;
     background: #000;
@@ -60,7 +71,7 @@ body {
     color: #fff;
     cursor: pointer;
 }
-.phonebook-wrap .list-wrap {}
+
 .list-wrap .search-wrap {
     margin-bottom: 20px;
 }
@@ -91,10 +102,6 @@ body {
     
 }
 
-.list-wrap .result-box .total {
-
-}
-
 .item-box {
     overflow: hidden;
     position: relative;
@@ -113,8 +120,7 @@ body {
 .item-box p {
     padding-left: 10px;
 }
-.item-box .name {}
-.item-box .number {}
+
 .item-box button {
     position: absolute;
     right: 0;

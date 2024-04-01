@@ -5,11 +5,14 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const [name,setName] = useState('');
   const [phoneNum,setPhoneNum] = useState('');
+  const [newAdded,setNewAdded] = useState(false);
   const addContact = (e) => {
       e.preventDefault();
       dispatch({type:'ADD_CONTACT',payload:{name,phoneNum}});
       setName('');
       setPhoneNum('');
+      setNewAdded(true);
+      setTimeout(()=>{setNewAdded(false)},1500)
   }
   return (
     <div className='form-wrap'>
@@ -34,7 +37,7 @@ const ContactForm = () => {
               maxLength={15} 
               onChange={(e) => {setPhoneNum(e.target.value)}}/> 
         </div>
-        <div className='button-box'><button type='submit'>추가</button></div>
+        <div className='button-box'><span className={String(newAdded)}>새로운 연락처가 등록됐습니다</span><button type='submit'>추가</button></div>
       </form>
     </div>
   )
